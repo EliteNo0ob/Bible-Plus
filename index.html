@@ -10,31 +10,30 @@
     <link rel="stylesheet" href="style.css">
     <link rel="icon" href="favicon.ico" type="image/x-icon"> </head>
 <body>
-    <header>
-        <div class="container">
-            <div class="logo">The Bible Plus</div>
-            <nav>
-                <ul>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#features">Features</a></li>
-                    <li><a href="#vision">Our Vision</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
+    <header id="main-header"> <div class="container">
+        <div class="logo">The Bible Plus</div>
+        <img src="images/biblepluslogo.svg" alt="The Bible Plus Logo" class="header-logo"> <nav>
+            <ul>
+                <li><a href="#about">About</a></li>
+                <li><a href="#features">Features</a></li>
+                <li><a href="#vision">Our Vision</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
 
     <main>
         <section id="hero" class="hero-section">
-            <div class="container">
-                <div class="hero-content">
-                    <h1>Unlock Deeper Biblical Insights</h1>
-                    <p class="tagline">Your Personal AI-Powered Guide to Understanding Scripture</p>
-                    <a href="#features" class="button primary">Discover Features</a>
-                    <a href="#contact" class="button secondary">Get Notified on Launch</a>
-                </div>
-            </div>
-        </section>
+    <div class="container">
+        <div class="hero-content">
+            <img src="images/biblepluslogo.svg" alt="The Bible Plus Logo" class="hero-logo"> <h1>Unlock Deeper Biblical Insights</h1>
+            <p class="tagline">Your Personal AI-Powered Guide to Understanding Scripture</p>
+            <a href="#features" class="button primary">Discover Features</a>
+            <a href="#contact" class="button secondary">Get Notified on Launch</a>
+        </div>
+    </div>
+</section>
 
         <section id="about" class="about-section">
             <div class="container">
@@ -139,5 +138,52 @@
             this.reset(); // Clear the form
         });
     </script>
+    <script>
+    // Smooth scrolling for navigation links
+    document.querySelectorAll('nav a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            document.querySelector(this.getAttribute('href')).scrollIntoView({
+                behavior: 'smooth'
+            });
+        });
+    });
+
+    // Set current year in footer
+    document.getElementById('current-year').textContent = new Date().getFullYear();
+
+    // Placeholder for mailing list signup form
+    document.querySelector('.signup-form').addEventListener('submit', function(e) {
+        e.preventDefault();
+        alert('Thank you for signing up! We\'ll keep you updated.');
+        // In a real app, you would send this email to a backend service like Mailchimp, SendGrid, etc.
+        this.reset(); // Clear the form
+    });
+
+    // --- New JavaScript for Header Scroll Effect ---
+    const mainHeader = document.getElementById('main-header');
+    const headerLogo = document.querySelector('.header-logo');
+    const headerTextLogo = document.querySelector('.logo'); // The "The Bible Plus" text
+    const heroSection = document.getElementById('hero');
+
+    // Function to check scroll position and apply/remove classes
+    function handleScroll() {
+        // Get the bottom position of the hero section relative to the viewport
+        const heroBottom = heroSection.getBoundingClientRect().bottom;
+
+        // If the user has scrolled past the hero section
+        if (window.scrollY > heroBottom || heroBottom < 0) { // Also check if hero bottom is above viewport
+            mainHeader.classList.add('scrolled');
+        } else {
+            mainHeader.classList.remove('scrolled');
+        }
+    }
+
+    // Add scroll event listener
+    window.addEventListener('scroll', handleScroll);
+
+    // Run on load to handle initial scroll position (e.g., if page loads scrolled down)
+    window.addEventListener('load', handleScroll);
+</script>
 </body>
 </html>
