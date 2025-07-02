@@ -532,7 +532,7 @@ footer a:hover {
 
 /* Logo on Hero Section */
 .hero-logo {
-    max-width: 200px; /* Adjusted: Smaller size */
+    max-width: 300px; /* Adjusted: Smaller size */
     height: auto;
     margin-bottom: 30px;
     filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.4));
@@ -540,7 +540,7 @@ footer a:hover {
 
 /* Header Logo (initially hidden) */
 .header-logo {
-    height: 35px; /* Adjusted: Smaller size for scrolled header */
+    height: 70px; /* Adjusted: Smaller size for scrolled header */
     width: auto;
     display: none;
     opacity: 0;
