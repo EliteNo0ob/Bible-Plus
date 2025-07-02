@@ -3,15 +3,15 @@
 
 /* Basic Variables & Reset */
 :root {
-    --primary-color: #4CAF50; /* Green - For main actions */
-    --secondary-color: #3F51B5; /* Indigo - For accents/buttons */
-    --accent-color: #FFEB3B; /* Yellow - For highlights */
-    --text-dark: #212121;
-    --text-light: #f0f0f0;
-    --bg-light: #ffffff;
-    --bg-dark: #303030;
-    --section-bg-light: #f5f5f5;
-    --border-color: #e0e0e0;
+    --primary-color: #C1272D; /* Red - For main actions, important highlights */
+    --secondary-color: #000000; /* Black - For dominant text, dark backgrounds */
+    --accent-color: #C2B027; /* Yellow/Gold - For highlights, logo element */
+    --text-dark: #000000; /* Black */
+    --text-light: #FFFFFF; /* White */
+    --bg-dark: #000000; /* Black for header/footer */
+    --bg-light: #F8F8F8; /* Soft off-white for main background */
+    --section-bg-light: #EEEEEE; /* Light grey for alternating sections */
+    --border-color: #AAAAAA; /* Medium grey for borders */
 }
 
 *, *::before, *::after {
@@ -44,7 +44,7 @@ header {
     position: sticky;
     top: 0;
     z-index: 1000;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    box-shadow: 0 2px 10px rgba(0,0,0,0.3); /* Darker shadow for black header */
 }
 
 header .container {
@@ -57,7 +57,7 @@ header .container {
     font-family: 'Playfair Display', serif;
     font-size: 1.8rem;
     font-weight: 700;
-    color: var(--accent-color);
+    color: var(--accent-color); /* Gold color for the logo text */
 }
 
 nav ul {
@@ -86,12 +86,12 @@ nav ul li a::after {
     height: 2px;
     bottom: 0;
     left: 0;
-    background-color: var(--primary-color);
+    background-color: var(--primary-color); /* Red hover underline */
     transition: width 0.3s ease-out;
 }
 
 nav ul li a:hover {
-    color: var(--primary-color);
+    color: var(--primary-color); /* Red on hover */
 }
 
 nav ul li a:hover::after {
@@ -100,15 +100,15 @@ nav ul li a:hover::after {
 
 /* Hero Section */
 .hero-section {
-    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://via.placeholder.com/1800x900/3F51B5/FFFFFF?text=Faith+Study+Hero') no-repeat center center/cover;
+    background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url('https://via.placeholder.com/1800x900/000000/C2B027?text=Bible+Plus+Hero') no-repeat center center/cover; /* Black overlay, yellow text for placeholder */
     color: var(--text-light);
     text-align: center;
     padding: 120px 0;
     display: flex;
     align-items: center;
-    min-height: 80vh; /* Make it take up most of the viewport height */
+    min-height: 80vh;
     position: relative;
-    overflow: hidden; /* For subtle animations */
+    overflow: hidden;
 }
 
 .hero-section::before {
@@ -120,7 +120,7 @@ nav ul li a:hover::after {
     height: 200%;
     background: radial-gradient(circle at center, rgba(255,255,255,0.05) 1px, transparent 1px);
     background-size: 20px 20px;
-    animation: backgroundMove 60s linear infinite; /* Subtle background movement */
+    animation: backgroundMove 60s linear infinite;
 }
 
 @keyframes backgroundMove {
@@ -135,7 +135,7 @@ nav ul li a:hover::after {
 .hero-content {
     max-width: 900px;
     margin: 0 auto;
-    position: relative; /* Ensure content is above ::before pseudo-element */
+    position: relative;
     z-index: 10;
 }
 
@@ -144,7 +144,8 @@ nav ul li a:hover::after {
     font-size: 4.5rem;
     line-height: 1.1;
     margin-bottom: 20px;
-    text-shadow: 0 4px 8px rgba(0,0,0,0.3);
+    text-shadow: 0 4px 8px rgba(0,0,0,0.5);
+    color: var(--accent-color); /* Gold heading for impact */
 }
 
 .hero-content .tagline {
@@ -156,7 +157,7 @@ nav ul li a:hover::after {
 .button {
     display: inline-block;
     padding: 14px 30px;
-    border-radius: 50px; /* Pill shape */
+    border-radius: 50px;
     text-decoration: none;
     font-weight: 700;
     font-size: 1.1rem;
@@ -167,15 +168,15 @@ nav ul li a:hover::after {
 }
 
 .button.primary {
-    background-color: var(--primary-color);
-    color: var(--white);
-    box-shadow: 0 4px 10px rgba(76, 175, 80, 0.3);
+    background-color: var(--primary-color); /* Red button */
+    color: var(--text-light);
+    box-shadow: 0 4px 10px rgba(193, 39, 45, 0.3); /* Red shadow */
 }
 
 .button.primary:hover {
-    background-color: #4CAF50; /* Slightly darker */
+    background-color: #A91E24; /* Slightly darker red */
     transform: translateY(-3px);
-    box-shadow: 0 6px 15px rgba(76, 175, 80, 0.4);
+    box-shadow: 0 6px 15px rgba(193, 39, 45, 0.4);
 }
 
 .button.secondary {
@@ -196,14 +197,14 @@ main section {
 }
 
 main section:nth-child(even) { /* Apply to about and vision */
-    background-color: var(--section-bg-light);
+    background-color: var(--section-bg-light); /* Light grey background */
 }
 
 main section h2 {
     font-family: 'Playfair Display', serif;
     font-size: 3rem;
     margin-bottom: 20px;
-    color: var(--primary-color);
+    color: var(--secondary-color); /* Black heading */
     position: relative;
     padding-bottom: 10px;
 }
@@ -216,7 +217,7 @@ main section h2::after {
     transform: translateX(-50%);
     width: 80px;
     height: 4px;
-    background-color: var(--secondary-color);
+    background-color: var(--primary-color); /* Red underline */
     border-radius: 2px;
 }
 
@@ -248,7 +249,7 @@ main section h2::after {
 
 .about-section .image-content {
     flex: 1;
-    min-width: 300px; /* Prevent image from getting too small */
+    min-width: 300px;
 }
 
 .about-section img {
@@ -287,11 +288,12 @@ main section h2::after {
     margin-bottom: 25px;
     border-radius: 50%;
     object-fit: cover;
+    /* Update placeholder image colors to match new scheme */
 }
 
 .feature-item h3 {
     font-family: 'Playfair Display', serif;
-    color: var(--secondary-color);
+    color: var(--primary-color); /* Red for feature titles */
     margin-top: 0;
     font-size: 1.8rem;
     margin-bottom: 15px;
@@ -305,17 +307,17 @@ main section h2::after {
 
 /* Vision Section */
 .vision-section {
-    background-color: var(--bg-dark);
+    background-color: var(--bg-dark); /* Black background */
     color: var(--text-light);
     padding: 100px 0;
 }
 
 .vision-section h2 {
-    color: var(--accent-color);
+    color: var(--accent-color); /* Gold heading */
 }
 
 .vision-section h2::after {
-    background-color: var(--primary-color);
+    background-color: var(--primary-color); /* Red underline */
 }
 
 .vision-content {
@@ -341,7 +343,7 @@ main section h2::after {
 
 /* Contact Section */
 .contact-section {
-    background-color: var(--bg-light);
+    background-color: var(--bg-light); /* Off-white background */
 }
 
 .signup-form {
@@ -361,15 +363,17 @@ main section h2::after {
     max-width: 350px;
     outline: none;
     transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    color: var(--text-dark); /* Ensure input text is readable */
+    background-color: var(--bg-light); /* Input background is light */
 }
 
 .signup-form input[type="email"]:focus {
-    border-color: var(--primary-color);
-    box-shadow: 0 0 0 3px rgba(76, 175, 80, 0.2);
+    border-color: var(--primary-color); /* Red border on focus */
+    box-shadow: 0 0 0 3px rgba(193, 39, 45, 0.2); /* Red shadow on focus */
 }
 
 .signup-form .button {
-    margin: 0; /* Override section margin */
+    margin: 0;
 }
 
 .social-links {
@@ -383,7 +387,7 @@ main section h2::after {
 
 .social-icon {
     display: inline-block;
-    background-color: var(--secondary-color);
+    background-color: var(--primary-color); /* Red background for social icons */
     color: var(--white);
     padding: 10px 20px;
     margin: 0 10px;
@@ -394,12 +398,12 @@ main section h2::after {
 }
 
 .social-icon:hover {
-    background-color: #304FFE; /* Darker indigo */
+    background-color: #A91E24; /* Darker red on hover */
     transform: translateY(-2px);
 }
 
 .contact-section p a {
-    color: var(--primary-color);
+    color: var(--primary-color); /* Red link color */
     text-decoration: none;
     font-weight: 700;
 }
@@ -410,12 +414,12 @@ main section h2::after {
 
 /* Footer */
 footer {
-    background-color: var(--bg-dark);
+    background-color: var(--bg-dark); /* Black background */
     color: var(--text-light);
     padding: 30px 0;
     text-align: center;
     font-size: 0.9rem;
-    border-top: 5px solid var(--primary-color);
+    border-top: 5px solid var(--primary-color); /* Red top border */
 }
 
 footer p {
@@ -423,7 +427,7 @@ footer p {
 }
 
 footer a {
-    color: var(--accent-color);
+    color: var(--accent-color); /* Gold links in footer */
     text-decoration: none;
     margin: 0 10px;
 }
@@ -433,7 +437,7 @@ footer a:hover {
 }
 
 
-/* Responsive Design */
+/* Responsive Design - (No changes needed here unless you want specific color overrides for mobile) */
 @media (max-width: 992px) {
     .hero-content h1 {
         font-size: 3.5rem;
