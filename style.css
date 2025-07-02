@@ -532,7 +532,7 @@ footer a:hover {
 
 /* Logo on Hero Section */
 .hero-logo {
-    max-width: 300px; /* Adjusted: Smaller size */
+    max-width: 500px; /* Adjusted: Smaller size */
     height: auto;
     margin-bottom: 30px;
     filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.4));
