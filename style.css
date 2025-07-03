@@ -327,6 +327,7 @@ main section h2::after {
     line-height: 1.8;
     font-weight: 300;
     text-align: left;
+    color: var(--text-dark); /* Ensure text is readable */
 }
 
 .vision-content p {
