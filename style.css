@@ -729,3 +729,27 @@ footer a:hover {
     height: 900px; /* Adjust height as needed */
     display: block; /* Ensure it behaves as a block element */
 }
+.donorbox-form-wrapper {
+    /* This sets the maximum width of the container that holds your form */
+    max-width: 500px; 
+    
+    /* This is the magic line that centers a block-level element with a defined width */
+    margin: 0 auto; 
+
+    /* Optional: If you want to see the wrapper for debugging */
+    /* border: 1px solid blue; */ 
+}
+
+.donorbox-form-wrapper iframe {
+    /* Make the iframe fill the width of its new wrapper */
+    width: 100%; 
+    
+    /* Ensure the iframe itself is treated as a block element for margin:auto to work, if applied directly to iframe.
+       When wrapped, it's still good practice. */
+    display: block; 
+
+    /* Height as you need it */
+    height: 900px;
+
+    /* Make sure no other conflicting max-width or min-width styles are overriding this */
+}
