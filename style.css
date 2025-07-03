@@ -344,7 +344,7 @@ main section h2::after {
 
 /* Contact Section */
 .contact-section {
-    background-color: var(--bg-light); /* Off-white background */
+    background-color: transparent; /* Changed: This will make the contact section background clear */
 }
 
 .signup-form {
