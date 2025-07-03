@@ -615,13 +615,20 @@ header .logo {
 
 /* Overall container for the Mailchimp form */
 #mc_embed_signup {
-    background: transparent; /* Ensures no default Mailchimp background */
+    background: transparent;
     clear: left;
     width: 100%;
-    max-width: 500px; /* Limits the form width for better design */
-    margin: 40px auto 0 auto; /* Centers the form horizontally */
+    max-width: 500px;
+    margin: 40px auto 0 auto;
     text-align: center;
-    font-family: 'Roboto', sans-serif; /* Use your site's font */
+    font-family: 'Roboto', sans-serif;
+}
+
+/* Add this rule to target the inner scrolling div */
+#mc_embed_signup_scroll {
+    background-color: transparent; /* Changed: Make the inner Mailchimp container transparent */
+    padding: 0; /* Remove any default padding that might create a white box */
+    margin: 0; /* Remove any default margin */
 }
 
 /* Hide Mailchimp's default h2 "Subscribe" heading */
