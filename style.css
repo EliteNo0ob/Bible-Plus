@@ -70,7 +70,7 @@ header .container {
 
 /* Header Logo (initially hidden) - The image logo */
 .header-logo {
-    height: 70px; /* Adjusted size for scrolled header */
+    height: 100px; /* Adjusted size for scrolled header */
     width: auto;
     display: none; /* Initially hidden */
     opacity: 0;
