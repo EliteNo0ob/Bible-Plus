@@ -665,7 +665,7 @@ header .logo {
     outline: none; /* Removes default outline on focus */
     transition: border-color 0.3s ease, box-shadow 0.3s ease;
     color: var(--text-dark); /* Uses your text color */
-    background-color: var(--bg-light); /* Uses your light background */
+    background-color: transparent; /* Changed: This will make the input background clear */
 }
 
 #mc_embed_signup input.email:focus {
