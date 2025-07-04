@@ -1,0 +1,8 @@
+{
+  "rewrites": [
+    {
+      "source": "/demo/(.*)",
+      "destination": "https://bible-plus-app-demo.vercel.app//$1"
+    }
+  ]
+}
