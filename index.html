@@ -3,232 +3,691 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Bible Plus - Unlock Scripture with AI</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
-    <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
-    <link rel="manifest" href="/images/site.webmanifest">
-    <link rel="mask-icon" href="/images/safari-pinned-tab.svg" color="#C1272D">
-    <link rel="shortcut icon" href="/images/favicon.ico">
-    <meta name="msapplication-TileColor" content="#C1272D">
-    <meta name="theme-color" content="#ffffff">
+    <title>The Bible Plus: Deepen Your Faith, Enhanced by AI</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#4F46E5',
+                        secondary: '#10B981',
+                        dark: '#1E293B',
+                        light: '#F8FAFC',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Merriweather', 'serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Merriweather:wght@400;700&display=swap');
+        
+        .hero-gradient {
+            background: linear-gradient(135deg, #4F46E5 0%, #10B981 100%);
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        
+        .testimonial-card {
+            transition: all 0.3s ease;
+        }
+        
+        .testimonial-card:hover {
+            transform: scale(1.03);
+        }
+        
+        .ai-pulse {
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0% {
+                box-shadow: 0 0 0 0 rgba(79, 70, 229, 0.4);
+            }
+            70% {
+                box-shadow: 0 0 0 10px rgba(79, 70, 229, 0);
+            }
+            100% {
+                box-shadow: 0 0 0 0 rgba(79, 70, 229, 0);
+            }
+        }
+    </style>
 </head>
-<body>
-    <header id="main-header">
-        <div class="container">
-            <div class="logo">The Bible Plus</div>
-            <img src="images/biblepluslogo.svg" alt="The Bible Plus Logo" class="header-logo">
-            <nav>
-                <ul>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#features">Features</a></li>
-                    <li><a href="#vision">Our Vision</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
-            </nav>
+<body class="font-sans bg-light text-dark">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-sm sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <div class="flex-shrink-0 flex items-center">
+                        <i class="fas fa-bible text-primary text-2xl mr-2"></i>
+                        <span class="text-xl font-bold text-primary">The Bible Plus</span>
+                    </div>
+                </div>
+                <div class="hidden md:ml-6 md:flex md:items-center md:space-x-8">
+                    <a href="#features" class="text-gray-500 hover:text-primary px-3 py-2 text-sm font-medium">Features</a>
+                    <a href="#how-it-works" class="text-gray-500 hover:text-primary px-3 py-2 text-sm font-medium">How It Works</a>
+                    <a href="#testimonials" class="text-gray-500 hover:text-primary px-3 py-2 text-sm font-medium">Testimonials</a>
+                    <a href="#pricing" class="text-gray-500 hover:text-primary px-3 py-2 text-sm font-medium">Pricing</a>
+                    <a href="#contact" class="text-gray-500 hover:text-primary px-3 py-2 text-sm font-medium">Contact</a>
+                </div>
+                <div class="flex items-center">
+                    <a href="#waitlist" class="bg-primary text-white px-4 py-2 rounded-md text-sm font-medium hover:bg-opacity-90 transition duration-300">Join Waitlist</a>
+                </div>
+                <div class="-mr-2 flex items-center md:hidden">
+                    <button type="button" class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-primary" aria-controls="mobile-menu" aria-expanded="false" id="mobile-menu-button">
+                        <span class="sr-only">Open main menu</span>
+                        <i class="fas fa-bars"></i>
+                    </button>
+                </div>
+            </div>
         </div>
-    </header>
+        
+        <!-- Mobile menu -->
+        <div class="hidden md:hidden" id="mobile-menu">
+            <div class="pt-2 pb-3 space-y-1">
+                <a href="#features" class="text-gray-500 hover:text-primary hover:bg-gray-50 block px-3 py-2 rounded-md text-base font-medium">Features</a>
+                <a href="#how-it-works" class="text-gray-500 hover:text-primary hover:bg-gray-50 block px-3 py-2 rounded-md text-base font-medium">How It Works</a>
+                <a href="#testimonials" class="text-gray-500 hover:text-primary hover:bg-gray-50 block px-3 py-2 rounded-md text-base font-medium">Testimonials</a>
+                <a href="#pricing" class="text-gray-500 hover:text-primary hover:bg-gray-50 block px-3 py-2 rounded-md text-base font-medium">Pricing</a>
+                <a href="#contact" class="text-gray-500 hover:text-primary hover:bg-gray-50 block px-3 py-2 rounded-md text-base font-medium">Contact</a>
+            </div>
+        </div>
+    </nav>
 
-    <main>
-        <section id="hero" class="hero-section">
-            <div class="container">
-                <div class="hero-content">
-                    <img src="images/biblepluslogo.svg" alt="The Bible Plus Logo" class="hero-logo">
-                    <h1>Unlock Deeper Biblical Insights</h1>
-                    <p class="tagline">Your Personal AI-Powered Guide to Understanding Scripture</p>
-                    <a href="#features" class="button primary">Discover Features</a>
-                    <a href="#contact" class="button secondary">Get Notified on Launch</a>
+    <!-- Hero Section -->
+    <div class="hero-gradient text-white">
+        <div class="max-w-7xl mx-auto py-16 px-4 sm:py-24 sm:px-6 lg:px-8">
+            <div class="text-center">
+                <h1 class="text-4xl md:text-6xl font-bold font-serif leading-tight mb-6">Deepen Your Faith <br class="hidden md:block"/> Enhanced by AI</h1>
+                <p class="mt-6 text-xl max-w-3xl mx-auto">The Bible Plus integrates advanced technology with timeless scripture to transform your spiritual journey through interactive study and AI-powered insights.</p>
+                <div class="mt-10 flex flex-col sm:flex-row justify-center gap-4">
+                    <a href="#waitlist" class="bg-white text-primary px-8 py-4 rounded-md text-lg font-semibold hover:bg-opacity-90 transition duration-300 flex items-center justify-center">
+                        <i class="fas fa-rocket mr-2"></i> Join Waitlist
+                    </a>
+                    <a href="#demo" class="border-2 border-white text-white px-8 py-4 rounded-md text-lg font-semibold hover:bg-white hover:bg-opacity-10 transition duration-300 flex items-center justify-center">
+                        <i class="fas fa-play-circle mr-2"></i> Watch Demo
+                    </a>
                 </div>
-            </div>
-        </section>
-
-        <section id="about" class="about-section">
-            <div class="container">
-                <div class="content-wrapper">
-                    <div class="text-content">
-                        <h2>Our Purpose: A Journey of Faith, Shared with All</h2>
-                        <p>This entire endeavor, The Bible Plus, began as a deeply personal journey for me. I longed for a way to strengthen my own faith and truly deepen my walk with Jesus, and I saw the incredible potential of AI to help bridge that gap. My fervent prayer was that if this could profoundly impact my understanding, then perhaps, with God's grace, it could help countless others too – and if so, what a magnificent blessing that would be!</p>
-                        <p>From this heartfelt conviction, our mission blossomed: to make profound biblical understanding joyfully and freely accessible to everyone, everywhere. We are pouring our dedication into building a tool that compassionately simplifies complex concepts, provides immediate, insightful context, and offers fresh, Spirit-led perspectives, gently removing traditional barriers to deep theological study. We are unwavering in our commitment to maintain this resource as a precious gift, ensuring that financial constraints will never hinder anyone's opportunity for spiritual growth.</p>
+                <div class="mt-12 flex flex-wrap justify-center gap-4">
+                    <div class="flex items-center">
+                        <i class="fas fa-check-circle text-secondary mr-2"></i>
+                        <span>Interactive Verse Study</span>
                     </div>
-                    <div class="image-content">
-                        <img src="https://via.placeholder.com/600x400/81C784/FFFFFF?text=Purpose+Image" alt="Purpose of The Bible Plus">
+                    <div class="flex items-center">
+                        <i class="fas fa-check-circle text-secondary mr-2"></i>
+                        <span>Original Language Insights</span>
+                    </div>
+                    <div class="flex items-center">
+                        <i class="fas fa-check-circle text-secondary mr-2"></i>
+                        <span>AI Guided Journeys</span>
                     </div>
                 </div>
-            </div>
-        </section>
-
-        <section id="features" class="features-section">
-    <div class="container">
-        <h2>Experience a New Way to Study</h2>
-        <p class="section-description">The Bible Plus combines modern AI with ancient wisdom to bring you unparalleled study tools.</p>
-        <div class="feature-grid">
-            <div class="feature-item">
-                <img src="images/microchip.png" alt="AI Icon">
-                <h3>Intelligent Q&A</h3>
-                <p>Ask any question about scripture and receive clear, contextual, and insightful answers powered by advanced AI.</p>
-            </div>
-            <div class="feature-item">
-                <img src="images/context.png" alt="Context Icon">
-                <h3>Deep Contextual Insights</h3>
-                <p>Uncover the historical, cultural, and linguistic nuances of any passage, enriching your understanding beyond the surface.</p>
-            </div>
-            <div class="feature-item">
-                <img src="images/personal.png" alt="Personalization Icon">
-                <h3>Personalized Study</h3>
-                <p>Save your favorite verses, make private notes, and track your learning journey, tailored to your spiritual growth.</p>
-            </div>
-            <div class="feature-item">
-                <img src="images/accessible.png" alt="Accessibility Icon">
-                <h3>Always Free & Accessible</h3>
-                <p>Our foundational commitment: The Bible Plus will always be free to use, ensuring widespread access to profound biblical knowledge.</p>
-            </div>
-            <div class="feature-item">
-                <img src="images/epidemiology.png" alt="Share Icon">
-                <h3>Community Sharing</h3>
-                <p>Share your favorite verses, personal notes, and curated reading plans directly with friends and groups to foster shared spiritual growth.</p>
-            </div>
-            <div class="feature-item">
-                <img src="images/forum.png" alt="Forum Icon">
-                <h3>Interactive Discussions</h3>
-                <p>Engage in vibrant, modern forum discussions. Post questions, share insights, and connect with a community passionate about the Bible.</p>
             </div>
         </div>
     </div>
-</section>
 
-        <section id="vision" class="vision-section">
-            <div class="container">
-                <h2>Our Vision for the Future</h2>
-                <div class="vision-content">
-                    <p>We envision a world where anyone, regardless of their background or prior knowledge, can easily engage with the Bible and discover its transformative truths. This app is just the beginning.</p>
-                    <p>Our roadmap includes integrating more study resources, collaborative learning tools, advanced AI models for deeper theological exploration, and multi-language support. We're continually pushing the boundaries of technology to serve faith communities globally.</p>
-                    <p class="call-to-action">Join us on this journey as we build the future of faith-based learning.</p>
+    <!-- App Showcase -->
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+        <div class="lg:grid lg:grid-cols-2 lg:gap-16 items-center">
+            <div class="mb-12 lg:mb-0">
+                <h2 class="text-3xl font-bold font-serif mb-6">Interactive Bible Study Experience</h2>
+                <p class="text-lg text-gray-600 mb-8">The Bible Plus offers dynamic highlighting, multi-verse selection, and contextual actions to make your scripture engagement more meaningful and personalized than ever before.</p>
+                
+                <div class="space-y-6">
+                    <div class="flex">
+                        <div class="flex-shrink-0">
+                            <div class="flex items-center justify-center h-12 w-12 rounded-md bg-primary text-white">
+                                <i class="fas fa-brain"></i>
+                            </div>
+                        </div>
+                        <div class="ml-4">
+                            <h3 class="text-lg font-medium">Deep Contextual Analysis</h3>
+                            <p class="mt-1 text-gray-600">Understand passages in their original cultural and historical setting with AI-generated background information.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="flex">
+                        <div class="flex-shrink-0">
+                            <div class="flex items-center justify-center h-12 w-12 rounded-md bg-secondary text-white">
+                                <i class="fas fa-user-friends"></i>
+                            </div>
+                        </div>
+                        <div class="ml-4">
+                            <h3 class="text-lg font-medium">Community Wisdom</h3>
+                            <p class="mt-1 text-gray-600">Access insights from theologians, pastors, and scholars curated by our AI to provide balanced perspectives.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="flex">
+                        <div class="flex-shrink-0">
+                            <div class="flex items-center justify-center h-12 w-12 rounded-md bg-purple-500 text-white">
+                                <i class="fas fa-book-open"></i>
+                            </div>
+                        </div>
+                        <div class="ml-4">
+                            <h3 class="text-lg font-medium">Personalized Study Plans</h3>
+                            <p class="mt-1 text-gray-600">AI creates custom reading plans based on your interests, knowledge level, and spiritual goals.</p>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </section>
+            
+            <div class="relative">
+                <div class="relative mx-auto border-gray-800 dark:border-gray-800 bg-gray-800 border-[14px] rounded-[2.5rem] h-[600px] w-[300px]">
+                    <div class="h-[32px] w-[3px] bg-gray-800 dark:bg-gray-800 absolute -left-[17px] top-[72px] rounded-l-lg"></div>
+                    <div class="h-[46px] w-[3px] bg-gray-800 dark:bg-gray-800 absolute -left-[17px] top-[124px] rounded-l-lg"></div>
+                    <div class="h-[46px] w-[3px] bg-gray-800 dark:bg-gray-800 absolute -left-[17px] top-[178px] rounded-l-lg"></div>
+                    <div class="h-[64px] w-[3px] bg-gray-800 dark:bg-gray-800 absolute -right-[17px] top-[142px] rounded-r-lg"></div>
+                    <div class="rounded-[2rem] overflow-hidden w-[272px] h-[572px] bg-white dark:bg-gray-800">
+                        <img src="https://images.unsplash.com/photo-1541701494587-cb58503033ed?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" class="h-full w-full object-cover" alt="App screenshot">
+                    </div>
+                </div>
+                <div class="absolute -bottom-12 -left-12 w-24 h-24 bg-primary rounded-full flex items-center justify-center text-white text-2xl ai-pulse">
+                    <i class="fas fa-robot"></i>
+                </div>
+            </div>
+        </div>
+    </div>
 
-        <section id="contact" class="contact-section">
-            <div class="container">
-                <h2>Stay Connected</h2>
-                <p>Be the first to know when 'The Bible Plus' officially launches and get updates on new features and insights.</p>
-                <div id="mc_embed_signup">
-                    <form action="https://plus.us9.list-manage.com/subscribe/post?u=f2c02478b84bf7694a737b889&amp;id=4d6d61230a&amp;f_id=00aed5e3f0" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
-                        <div id="mc_embed_signup_scroll">
-                            <h2>Subscribe</h2>
-                            <div class="indicates-required"><span class="asterisk">*</span> indicates required</div>
+    <!-- Features Section -->
+    <div id="features" class="bg-white py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold font-serif mb-4">Key Features for Spiritual Growth</h2>
+                <p class="text-lg text-gray-600 max-w-3xl mx-auto">The Bible Plus combines traditional scripture study with modern technology to create a transformative spiritual experience.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Feature 1 -->
+                <div class="bg-white rounded-xl shadow-md overflow-hidden feature-card transition duration-300">
+                    <div class="p-8">
+                        <div class="flex items-center justify-center h-12 w-12 rounded-md bg-primary text-white mb-4">
+                            <i class="fas fa-comment-alt"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-3">Interactive Verse Study</h3>
+                        <p class="text-gray-600">Highlight, save, and take notes on verses with contextual actions and original language insights at your fingertips.</p>
+                    </div>
+                </div>
+                
+                <!-- Feature 2 -->
+                <div class="bg-white rounded-xl shadow-md overflow-hidden feature-card transition duration-300">
+                    <div class="p-8">
+                        <div class="flex items-center justify-center h-12 w-12 rounded-md bg-secondary text-white mb-4">
+                            <i class="fas fa-layer-group"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-3">AI Guided Journeys</h3>
+                        <p class="text-gray-600">Explore curated paths on scripture study, prayer, theology, and historical context with AI guidance.</p>
+                    </div>
+                </div>
+                
+                <!-- Feature 3 -->
+                <div class="bg-white rounded-xl shadow-md overflow-hidden feature-card transition duration-300">
+                    <div class="p-8">
+                        <div class="flex items-center justify-center h-12 w-12 rounded-md bg-purple-500 text-white mb-4">
+                            <i class="fas fa-question-circle"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-3">Community Features</h3>
+                        <p class="text-gray-600">Connect with study groups, share prayer requests, and grow together in faith (coming soon).</p>
+                    </div>
+                </div>
+                
+                <!-- Feature 4 -->
+                <div class="bg-white rounded-xl shadow-md overflow-hidden feature-card transition duration-300">
+                    <div class="p-8">
+                        <div class="flex items-center justify-center h-12 w-12 rounded-md bg-yellow-500 text-white mb-4">
+                            <i class="fas fa-history"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-3">Historical Context Engine</h3>
+                        <p class="text-gray-600">Understand the cultural, political, and social background of biblical events with automatically generated context.</p>
+                    </div>
+                </div>
+                
+                <!-- Feature 5 -->
+                <div class="bg-white rounded-xl shadow-md overflow-hidden feature-card transition duration-300">
+                    <div class="p-8">
+                        <div class="flex items-center justify-center h-12 w-12 rounded-md bg-red-500 text-white mb-4">
+                            <i class="fas fa-praying-hands"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-3">Prayer Generator</h3>
+                        <p class="text-gray-600">Create personalized prayers based on the Scripture you're reading, helping you apply God's Word to your life.</p>
+                    </div>
+                </div>
+                
+                <!-- Feature 6 -->
+                <div class="bg-white rounded-xl shadow-md overflow-hidden feature-card transition duration-300">
+                    <div class="p-8">
+                        <div class="flex items-center justify-center h-12 w-12 rounded-md bg-green-500 text-white mb-4">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-3">Group Study Tools</h3>
+                        <p class="text-gray-600">Facilitate meaningful discussions with AI-generated discussion questions and study guides for your small group.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
-                            <div class="mc-field-group">
-                                <label for="mce-EMAIL">Email Address <span class="asterisk">*</span></label>
-                                <input type="email" name="EMAIL" class="required email" id="mce-EMAIL" required value="" placeholder="Your Email Address">
-                            </div>
+    <!-- How It Works -->
+    <div id="how-it-works" class="bg-gray-50 py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold font-serif mb-4">How The Bible + Works</h2>
+                <p class="text-lg text-gray-600 max-w-3xl mx-auto">Our proprietary AI technology combines natural language processing with theological databases to provide you with unparalleled Bible study tools.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="text-center">
+                    <div class="mx-auto flex items-center justify-center h-20 w-20 rounded-full bg-primary text-white text-2xl mb-4">1</div>
+                    <h3 class="text-xl font-semibold mb-3">Select Your Passage</h3>
+                    <p class="text-gray-600">Choose any Bible verse or passage from our extensive library of translations and versions.</p>
+                </div>
+                
+                <div class="text-center">
+                    <div class="mx-auto flex items-center justify-center h-20 w-20 rounded-full bg-secondary text-white text-2xl mb-4">2</div>
+                    <h3 class="text-xl font-semibold mb-3">AI Analysis</h3>
+                    <p class="text-gray-600">Our system processes the text through multiple layers of linguistic, historical, and theological analysis.</p>
+                </div>
+                
+                <div class="text-center">
+                    <div class="mx-auto flex items-center justify-center h-20 w-20 rounded-full bg-purple-500 text-white text-2xl mb-4">3</div>
+                    <h3 class="text-xl font-semibold mb-3">Receive Insights</h3>
+                    <p class="text-gray-600">Get comprehensive explanations, cross-references, and application points tailored to your needs.</p>
+                </div>
+            </div>
+            
+            <div class="mt-16 bg-white rounded-xl shadow-lg overflow-hidden">
+                <div class="md:flex">
+                    <div class="md:flex-shrink-0">
+                        <img class="h-64 w-full object-cover md:h-full md:w-64" src="https://images.unsplash.com/photo-1556740738-b6a63e27c4df?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="AI analyzing Bible">
+                    </div>
+                    <div class="p-8">
+                        <div class="uppercase tracking-wide text-sm text-primary font-semibold mb-1">Technology</div>
+                        <h3 class="text-2xl font-bold font-serif mb-4">The AI Behind The Bible +</h3>
+                        <p class="text-gray-600 mb-4">Our AI models will be trained on:</p>
+                        <ul class="list-disc pl-5 space-y-2 text-gray-600 mb-6">
+                            <li>Over 50 reputable Bible commentaries and study resources</li>
+                            <li>Original language lexicons and grammatical tools</li>
+                            <li>Historical documents and archaeological findings</li>
+                            <li>Theological works from multiple traditions</li>
+                        </ul>
+                        <p class="text-gray-600">All responses will be filtered through a theological framework to ensure doctrinal soundness.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
-                            <div id="mce-responses" class="clear foot">
-                                <div class="response" id="mce-error-response" style="display: none;"></div>
-                                <div class="response" id="mce-success-response" style="display: none;"></div>
-                            </div>
-                            <div aria-hidden="true" style="position: absolute; left: -5000px;">
-                                <input type="text" name="b_f2c02478b84bf7694a737b889_4d6d61230a" tabindex="-1" value="">
-                            </div>
-                            <div class="optionalParent">
-                                <div class="clear foot">
-                                    <input type="submit" name="subscribe" id="mc-embedded-subscribe" class="button primary" value="Join Our Mailing List">
-                                    <p style="margin: 0px auto;"><a href="http://eepurl.com/jipUhQ" title="Mailchimp - email marketing made easy and fun"><span style="display: inline-block; background-color: transparent; border-radius: 4px;"><img class="refferal_badge" src="https://digitalasset.intuit.com/render/content/dam/intuit/mc-fe/en_us/images/intuit-mc-rewards-text-dark.svg" alt="Intuit Mailchimp" style="width: 220px; height: 40px; display: flex; padding: 2px 0px; justify-content: center; align-items: center;"></span></a></p>
+    <!-- Investment Opportunity -->
+    <div class="bg-primary text-white py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="lg:grid lg:grid-cols-2 lg:gap-16 items-center">
+                <div class="mb-12 lg:mb-0">
+                    <h2 class="text-3xl font-bold font-serif mb-6">Investment Opportunity</h2>
+                    <p class="text-lg mb-8">We're seeking mission-aligned investors to help bring The Bible + to millions of believers worldwide. Our pre-seed round is now open to accredited investors.</p>
+                    
+                    <div class="space-y-6">
+                        <div class="flex">
+                            <div class="flex-shrink-0">
+                                <div class="flex items-center justify-center h-12 w-12 rounded-md bg-white text-primary">
+                                    <i class="fas fa-chart-line"></i>
                                 </div>
+                            </div>
+                            <div class="ml-4">
+                                <h3 class="text-lg font-medium">Market Potential</h3>
+                                <p class="mt-1">The global Bible app market is valued at $500M+ with 500M+ potential users worldwide.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex">
+                            <div class="flex-shrink-0">
+                                <div class="flex items-center justify-center h-12 w-12 rounded-md bg-white text-primary">
+                                    <i class="fas fa-lightbulb"></i>
+                                </div>
+                            </div>
+                            
+                        </div>
+                        
+                        <div class="flex">
+                            <div class="flex-shrink-0">
+                                <div class="flex items-center justify-center h-12 w-12 rounded-md bg-white text-primary">
+                                    <i class="fas fa-hands-helping"></i>
+                                </div>
+                            </div>
+                            <div class="ml-4">
+                                <h3 class="text-lg font-medium">Kingdom Impact</h3>
+                                <p class="mt-1">Invest in technology that will deepen biblical literacy and spiritual growth worldwide.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-white rounded-xl p-8 text-dark">
+                    <h3 class="text-xl font-bold font-serif mb-4">Request Investor Information</h3>
+                    <form>
+                        <div class="mb-4">
+                            <label for="name" class="block text-sm font-medium text-gray-700 mb-1">Name</label>
+                            <input type="text" id="name" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-primary focus:border-primary">
+                        </div>
+                        <div class="mb-4">
+                            <label for="email" class="block text-sm font-medium text-gray-700 mb-1">Email</label>
+                            <input type="email" id="email" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-primary focus:border-primary">
+                        </div>
+                        <div class="mb-4">
+                            <label for="interest" class="block text-sm font-medium text-gray-700 mb-1">Investment Interest</label>
+                            <select id="interest" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-primary focus:border-primary">
+                                <option>Pre-seed round</option>
+                                <option>Seed round (Future)</option>
+                                <option>Donation</option>
+                                <option>More Information</option>
+                            </select>
+                        </div>
+                        <button type="submit" class="w-full bg-primary text-white py-3 rounded-md font-medium hover:bg-opacity-90 transition duration-300">Submit Request</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Waitlist CTA -->
+    <div id="waitlist" class="bg-white py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="bg-gray-50 rounded-xl shadow-lg overflow-hidden">
+                <div class="lg:grid lg:grid-cols-2">
+                    <div class="p-12 bg-primary text-white">
+                        <h2 class="text-3xl font-bold font-serif mb-6">Join Our Waitlist</h2>
+                        <p class="text-lg mb-8">Be among the first to experience The Bible + when we launch. Waitlist members will receive early access and exclusive perks.</p>
+                        <div class="space-y-4">
+                            <div class="flex items-center">
+                                <i class="fas fa-unlock-alt text-secondary mr-4 text-2xl"></i>
+                                <span>Early access to beta features</span>
+                            </div>
+                           
+                            <div class="flex items-center">
+                                <i class="fas fa-comments text-secondary mr-4 text-2xl"></i>
+                                <span>Influence future development</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="p-12">
+                        <form>
+                            <div class="mb-6">
+                                <label for="waitlist-name" class="block text-sm font-medium text-gray-700 mb-1">Name</label>
+                                <input type="text" id="waitlist-name" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-primary focus:border-primary">
+                            </div>
+                            <div class="mb-6">
+                                <label for="waitlist-email" class="block text-sm font-medium text-gray-700 mb-1">Email</label>
+                                <input type="email" id="waitlist-email" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-primary focus:border-primary">
+                            </div>
+                            <div class="mb-6">
+                                <label for="waitlist-role" class="block text-sm font-medium text-gray-700 mb-1">You are primarily a...</label>
+                                <select id="waitlist-role" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-primary focus:border-primary">
+                                    <option>Individual believer</option>
+                                    <option>Small group leader</option>
+                                    <option>Pastor/Minister</option>
+                                    <option>Theology student</option>
+                                    <option>Other</option>
+                                </select>
+                            </div>
+                            <div class="flex items-center mb-6">
+                                <input id="waitlist-newsletter" type="checkbox" class="h-4 w-4 text-primary focus:ring-primary border-gray-300 rounded">
+                                <label for="waitlist-newsletter" class="ml-2 block text-sm text-gray-700">Receive product updates and newsletters</label>
+                            </div>
+                            <button type="submit" class="w-full bg-primary text-white py-3 rounded-md font-medium hover:bg-opacity-90 transition duration-300">Join Waitlist</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Contact -->
+    <div id="contact" class="bg-gray-50 py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold font-serif mb-4">Get In Touch</h2>
+                <p class="text-lg text-gray-600 max-w-3xl mx-auto">Have questions about The Bible +? Want to partner with us? We'd love to hear from you.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                <div>
+                    <h3 class="text-xl font-semibold mb-6">Contact Information</h3>
+                    <div class="space-y-6">
+                        <div class="flex">
+                            <div class="flex-shrink-0">
+                                <i class="fas fa-envelope text-primary text-xl"></i>
+                            </div>
+                            <div class="ml-3">
+                                <p class="text-sm font-medium text-gray-500">Email</p>
+                                <p class="text-base">contact@mybible.plus</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex">
+                            <div class="flex-shrink-0">
+                                <i class="fas fa-phone-alt text-primary text-xl"></i>
+                            </div>
+                            <div class="ml-3">
+                                <p class="text-sm font-medium text-gray-500">Phone</p>
+                                <p class="text-base">(940) 390-4244</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex">
+                            <div class="flex-shrink-0">
+                                <i class="fas fa-map-marker-alt text-primary text-xl"></i>
+                            </div>
+                           
+                        </div>
+                    </div>
+                    
+                    <div class="mt-12">
+                        <h3 class="text-xl font-semibold mb-6">Follow Us</h3>
+                        <div class="flex space-x-6">
+                            <a href="#" class="text-gray-500 hover:text-primary">
+                                <i class="fab fa-facebook-f text-2xl"></i>
+                            </a>
+                            <a href="#" class="text-gray-500 hover:text-primary">
+                                <i class="fab fa-twitter text-2xl"></i>
+                            </a>
+                            <a href="#" class="text-gray-500 hover:text-primary">
+                                <i class="fab fa-instagram text-2xl"></i>
+                            </a>
+                            <a href="#" class="text-gray-500 hover:text-primary">
+                                <i class="fab fa-linkedin-in text-2xl"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div>
+                    <form>
+                        <div class="grid grid-cols-1 gap-6">
+                            <div>
+                                <label for="contact-name" class="block text-sm font-medium text-gray-700 mb-1">Name</label>
+                                <input type="text" id="contact-name" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-primary focus:border-primary">
+                            </div>
+                            <div>
+                                <label for="contact-email" class="block text-sm font-medium text-gray-700 mb-1">Email</label>
+                                <input type="email" id="contact-email" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-primary focus:border-primary">
+                            </div>
+                            <div>
+                                <label for="contact-subject" class="block text-sm font-medium text-gray-700 mb-1">Subject</label>
+                                <select id="contact-subject" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-primary focus:border-primary">
+                                    <option>General Inquiry</option>
+                                    <option>Investment Opportunity</option>
+                                    <option>Partnership</option>
+                                    <option>Press/Media</option>
+                                    <option>Technical Support</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label for="contact-message" class="block text-sm font-medium text-gray-700 mb-1">Message</label>
+                                <textarea id="contact-message" rows="4" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-primary focus:border-primary"></textarea>
+                            </div>
+                            <div>
+                                <button type="submit" class="w-full bg-primary text-white py-3 rounded-md font-medium hover:bg-opacity-90 transition duration-300">Send Message</button>
                             </div>
                         </div>
                     </form>
                 </div>
-                <script type="text/javascript" src="//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js"></script>
-                <script type="text/javascript">(function($) {window.fnames = new Array(); window.ftypes = new Array();fnames[0]='EMAIL';ftypes[0]='email';fnames[1]='FNAME';ftypes[1]='text';fnames[2]='LNAME';ftypes[2]='text';fnames[3]='ADDRESS';ftypes[3]='address';fnames[4]='PHONE';ftypes[4]='phone';fnames[5]='BIRTHDAY';ftypes[5]='birthday';fnames[6]='COMPANY';ftypes[6]='text';}(jQuery));var $mcj = jQuery.noConflict(true);</script>
-                <div class="social-links">
-                    <p>Follow us on:</p>
-                    <a href="#" target="_blank" class="social-icon">Facebook</a>
-                    <a href="#" target="_blank" class="social-icon">X</a>
-                    <a href="#" target="_blank" class="social-icon">Tik Tok</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Demo Video Modal -->
+    <div id="demo-modal" class="fixed inset-0 z-50 hidden overflow-y-auto" aria-labelledby="modal-title" role="dialog" aria-modal="true">
+        <div class="flex items-end justify-center min-h-screen pt-4 px-4 pb-20 text-center sm:block sm:p-0">
+            <div class="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity" aria-hidden="true"></div>
+            <span class="hidden sm:inline-block sm:align-middle sm:h-screen" aria-hidden="true">&#8203;</span>
+            <div class="inline-block align-bottom bg-white rounded-lg text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-4xl sm:w-full">
+                <div class="bg-white px-4 pt-5 pb-4 sm:p-6 sm:pb-4">
+                    <div class="sm:flex sm:items-start">
+                        <div class="mt-3 text-center sm:mt-0 sm:ml-4 sm:text-left w-full">
+                            <div class="flex justify-between items-center mb-4">
+                                <h3 class="text-lg leading-6 font-medium text-gray-900" id="modal-title">The Bible + Demo</h3>
+                                <button type="button" id="close-modal" class="text-gray-400 hover:text-gray-500">
+                                    <i class="fas fa-times"></i>
+                                </button>
+                            </div>
+                            <div class="mt-2">
+                                <div class="aspect-w-16 aspect-h-9">
+                                    <iframe class="w-full h-96" src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <p></p>
-                <p>Email: <a href="mailto:contact@mybible.plus">contact@mybible.plus</a></p>
             </div>
-        </section>
-        <section id="donate-section" style="text-align: center; padding: 20px;">
-            <h2>Support The Bible Plus</h2>
-            <p>
-                Your generosity helps us build and maintain 'The Bible Plus,' ensuring deep biblical understanding remains free and accessible for everyone. Your gift directly funds our development efforts, AI technology, and hosting costs for the first year.
-            </p>
-            <p>
-                Thank you for partnering with us to bring this powerful tool to life!
-            </p>
+        </div>
+    </div>
 
-            <div class="donorbox-form-wrapper">
-                <script src="https://donorbox.org/widget.js" paypalExpress="true"></script>
-                <iframe
-                    src="https://donorbox.org/embed/the-bible-plus?"
-                    name="donorbox"
-                    allowpaymentrequest="allowpaymentrequest"
-                    seamless="seamless"
-                    frameborder="0"
-                    scrolling="no"
-                    height="900px"
-                    width="100%"
-                    style="max-height:none!important;" /* IMPORTANT: Remove max-width and min-width from here */
-                    allow="payment"
-                ></iframe>
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <div class="flex items-center mb-4">
+                        <i class="fas fa-bible text-primary text-2xl mr-2"></i>
+                        <span class="text-xl font-bold">The Bible Plus</span>
+                    </div>
+                    <p class="text-gray-400">Deepening faith through interactive scripture study enhanced by AI.</p>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Product</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#features" class="text-gray-400 hover:text-white">Features</a></li>
+                        <li><a href="#pricing" class="text-gray-400 hover:text-white">Pricing</a></li>
+                        <li><a href="#demo" class="text-gray-400 hover:text-white">Demo</a></li>
+                        <li><a href="#waitlist" class="text-gray-400 hover:text-white">Waitlist</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Company</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#about" class="text-gray-400 hover:text-white">About</a></li>
+                        <li><a href="#team" class="text-gray-400 hover:text-white">Team</a></li>
+                        <li><a href="#investors" class="text-gray-400 hover:text-white">Investors</a></li>
+                        <li><a href="#careers" class="text-gray-400 hover:text-white">Careers</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Legal</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white">Privacy</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Terms</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Cookie Policy</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Doctrinal Statement</a></li>
+                    </ul>
+                </div>
             </div>
-            </section>
-    </main>
-
-    <footer>
-        <div class="container">
-            <p>&copy; <span id="current-year"></span> The Bible Plus. All rights reserved.</p>
-            <p><a href="/privacy-policy.html">Privacy Policy</a> | <a href="/terms-of-service.html">Terms of Service</a></p>
+            
+            <div class="mt-12 pt-8 border-t border-gray-800 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-gray-400 mb-4 md:mb-0">© 20255 The Bible Plus. All rights reserved.</p>
+                <div class="flex space-x-6">
+                    <a href="#" class="text-gray-400 hover:text-white">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-white">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-white">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-white">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                </div>
+            </div>
         </div>
     </footer>
 
     <script>
-        // Smooth scrolling for navigation links
-        document.querySelectorAll('nav a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
+        // Mobile menu toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+        
+        // Demo modal
+        const demoLinks = document.querySelectorAll('a[href="#demo"]');
+        const demoModal = document.getElementById('demo-modal');
+        const closeModal = document.getElementById('close-modal');
+        
+        demoLinks.forEach(link => {
+            link.addEventListener('click', (e) => {
                 e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
+                demoModal.classList.remove('hidden');
+                document.body.style.overflow = 'hidden';
             });
         });
-
-        // Set current year in footer
-        document.getElementById('current-year').textContent = new Date().getFullYear();
-
-        // REMOVED: old placeholder signup form listener
-        // document.querySelector('.signup-form').addEventListener('submit', function(e) {
-        //     e.preventDefault();
-        //     alert('Thank you for signing up! We\'ll keep you updated.');
-        //     this.reset();
-        // });
-
-        // --- New JavaScript for Header Scroll Effect ---
-        const mainHeader = document.getElementById('main-header');
-        const headerLogo = document.querySelector('.header-logo');
-        const headerTextLogo = document.querySelector('.logo'); // The "The Bible Plus" text
-        const heroSection = document.getElementById('hero');
-
-        // Function to check scroll position and apply/remove classes
-        function handleScroll() {
-            const heroBottom = heroSection.getBoundingClientRect().bottom;
-
-            if (window.scrollY > heroBottom || heroBottom < 0) {
-                mainHeader.classList.add('scrolled');
-            } else {
-                mainHeader.classList.remove('scrolled');
-            }
-        }
-
-        // Add scroll event listener
-        window.addEventListener('scroll', handleScroll);
-        window.addEventListener('load', handleScroll);
+        
+        closeModal.addEventListener('click', () => {
+            demoModal.classList.add('hidden');
+            document.body.style.overflow = 'auto';
+        });
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                if(this.getAttribute('href') === '#demo') return;
+                
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if(targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if(targetElement) {
+                    targetElement.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+        
+        // Form submission handling (simplified)
+        document.querySelectorAll('form').forEach(form => {
+            form.addEventListener('submit', (e) => {
+                e.preventDefault();
+                alert('Thank you for your submission! We will be in touch soon.');
+                form.reset();
+            });
+        });
     </script>
-    </body>
+</body>
 </html>
